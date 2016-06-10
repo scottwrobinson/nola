@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+
+"use strict";
+
+var cli = require('commander');
+var AWS = require('aws-sdk');
+var pkg = require('../package.json');
+var commands = require('../lib/commands');
+
+cli.version(pkg.version)
+    .description('Tool for building Node packages to be deployed to AWS Lambda');
+
+cli.command('deploy')
+    .description('Deploys the Nola build server to Lambda')
+    .action(function() {
+        commands.deploy();
+    });
+
+cli.command('build [dir]')
+    .description('Builds the current project using the Lambda build server')
+    .action(function(dir) {
+        commands.build(dir);
+    });
+
+cli.command('*', null, { noHelp: true } )
+    .action(function(cmd) {
+        console.log(' ' + cmd + ' is not a valid command.');
+        cli.outputHelp();
+    });
+
+// If no command is provided, print help and exit
+if (process.argv.length == 2) {
+    cli.parse(process.argv);
+    cli.outputHelp();
+    process.exit();
+}
+
+cli.parse(process.argv);

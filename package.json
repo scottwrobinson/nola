@@ -1,0 +1,29 @@
+{
+  "name": "nola",
+  "version": "0.0.1",
+  "description": "Builds node_modules for Lambda, using Lambda",
+  "main": "bin/nola",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "nola": "bin/nola"
+  },
+  "repository": "scottwrobinson/nola",
+  "keywords": [
+    "aws",
+    "lambda",
+    "build"
+  ],
+  "author": "Scott Robinson <s.w.robinson@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scottwrobinson/nola/issues"
+  },
+  "homepage": "https://github.com/scottwrobinson/nola#readme",
+  "dependencies": {
+    "aws-sdk": "^2.3.18",
+    "commander": "^2.9.0",
+    "mz": "^2.4.0"
+  }
+}

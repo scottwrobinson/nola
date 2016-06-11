@@ -1,6 +1,6 @@
 {
   "name": "nola",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Builds node_modules for Lambda, using Lambda",
   "main": "bin/nola",
   "scripts": {
